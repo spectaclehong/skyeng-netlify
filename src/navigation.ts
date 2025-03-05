@@ -3,119 +3,120 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: '회사소개',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: '인사말',
+          href: getPermalink('/company/message'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: '연혁',
+          href: getPermalink('/company/history'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: '사업장소개',
+          href: getPermalink('/company/location'),
         },
       ],
     },
     {
-      text: 'Pages',
+      text: '사업분야',
       links: [
         {
-          text: 'Features (Anchor Link)',
+          text: '핵융합사업',
           href: getPermalink('/#features'),
         },
         {
-          text: 'Services',
+          text: '가속기사업',
           href: getPermalink('/services'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: '우주항공사업',
+          href: getPermalink('/services'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: '국방과학사업',
+          href: getPermalink('/services'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
+          text: '2차전지 관련사업',
+          href: getPermalink('/services'),
         },
         {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: '반도체 관련사업',
+          href: getPermalink('/services'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: '보유기술',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: '극저온기술',
+          href: getPermalink('/technoledge/low-temperature'),
         },
         {
-          text: 'Long-form Sales',
+          text: '고진공기술',
           href: getPermalink('/landing/sales'),
         },
         {
-          text: 'Click-Through',
+          text: '특수용접기술',
           href: getPermalink('/landing/click-through'),
         },
         {
-          text: 'Product Details (or Services)',
+          text: '정밀가공기술',
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: '정밀측정기술',
+          href: getPermalink('/landing/product'),
         },
       ],
     },
     {
-      text: 'Blog',
+      text: '홍보센터',
       links: [
         {
-          text: 'Blog List',
+          text: '공지사항',
+          href: getPermalink('/landing/lead-generation'),
+        },
+        {
+          text: '인증자료',
+          href: getPermalink('/landing/sales'),
+        },
+        {
+          text: '보도자료',
+          href: getPermalink('/landing/click-through'),
+        },
+      ],
+    },
+    {
+      text: '고객지원',
+      links: [
+        {
+          text: '문의사항',
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
+          text: '견적접수',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
         },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
+        // {
+        //   text: 'Article (with MDX)',
+        //   href: getPermalink('markdown-elements-demo-post', 'post'),
+        // },
+        // {
+        //   text: 'Category Page',
+        //   href: getPermalink('tutorials', 'category'),
+        // },
+        // {
+        //   text: 'Tag Page',
+        //   href: getPermalink('astro', 'tag'),
+        // },
       ],
     },
-    {
-      text: 'Widgets',
-      href: '#',
-    },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  // actions: [{ text: '문의하기', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {

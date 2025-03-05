@@ -1,0 +1,89 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Company History',
+};
+---
+
+<Layout metadata={metadata}>
+  <Steps
+    items={[
+      {
+        title: '2000. 05',
+        description:
+          "하늘엔지니어링 설립, 한국형 핵융합 실험로 (KSTAR) 프로젝트 참여",
+        // icon: 'tabler:package',
+      },
+      {
+        title: '2004. 11',
+        description:
+          '핵융합 실증로 (ITER) 프로젝트 참여, ISO 9001:2000 품질경영시스템 인증 획득',
+        icon: 'tabler:paint',
+      },
+      {
+        title: '2005. 10',
+        description: 
+            "국내 최초 대구경 천체 망원경 (600MM) 시스템 개발",
+        icon: 'tabler:check',
+      },
+      {
+        title: '2007. 08',
+        description:
+            "기업부설 연구소 설립",
+        icon: 'tabler:package',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/front-view.png',
+      alt: 'Front View',
+    }}
+  />
+  <Steps
+  isReversed
+  items={[
+    {
+      title: '2008. 06',
+      description:
+        "기술혁신형 중소기업 (INNO-BIZ) 선정, 벤처기업 인증",
+      icon: 'tabler:letter-case',
+    },
+    {
+      title: '2009. 10',
+      description:
+        "국무 총리 표창 / 과학 기술 부분",
+      icon: 'tabler:paint',
+    },
+    {
+      title: '2013. 11',
+      description:
+        "현대중공업㈜ 1차 협력사 등록",
+      icon: 'tabler:check',
+    },
+    {
+      title: '2018. 03',
+      description:
+        "LG 전자 1차  협력사 등록 / 특정설비 제조 인증 획득",
+      icon: 'tabler:check',
+    },
+    {
+      title: '2021. 02',
+      description:
+        "㈜로보스타 1차 협력사 등록",
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/side-view.png',
+    alt: 'Side view',
+  }}
+/>
+</Layout>
