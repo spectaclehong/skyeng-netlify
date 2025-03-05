@@ -22,8 +22,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: 'https://spectaclehong.github.io',
+  base: 'skyeng',
   output: 'static',
-
   integrations: [
     tailwind({
       applyBaseStyles: false,
