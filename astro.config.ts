@@ -23,6 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://spectaclehong.github.io',
+  base: 'skyeng',
   output: 'static',
   integrations: [
     tailwind({
