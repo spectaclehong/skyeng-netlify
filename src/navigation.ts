@@ -28,23 +28,23 @@ export const headerData = {
         },
         {
           text: '가속기사업',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/#content'),
         },
         {
           text: '우주항공사업',
-          href: getPermalink('/services'),
+          href: getPermalink('/#content2'),
         },
         {
           text: '국방과학사업',
-          href: getPermalink('/services'),
+          href: getPermalink('/#content3'),
         },
         {
           text: '2차전지 관련사업',
-          href: getPermalink('/services'),
+          href: getPermalink('/#content4'),
         },
         {
           text: '반도체 관련사업',
-          href: getPermalink('/services'),
+          href: getPermalink('/#features2'),
         },
       ],
     },
@@ -57,11 +57,11 @@ export const headerData = {
         },
         {
           text: '고진공기술',
-          href: getPermalink('/about'),
+          href: getPermalink('/pricing'),
         },
         {
           text: '특수용접기술',
-          href: getPermalink('/about'),
+          href: getPermalink('/services'),
         },
         {
           text: '정밀가공기술',
