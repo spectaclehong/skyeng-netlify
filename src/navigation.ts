@@ -28,7 +28,7 @@ export const headerData = {
         },
         {
           text: '가속기사업',
-          href: getPermalink('/services'),
+          href: getPermalink('/pricing'),
         },
         {
           text: '우주항공사업',
@@ -57,19 +57,19 @@ export const headerData = {
         },
         {
           text: '고진공기술',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/about'),
         },
         {
           text: '특수용접기술',
-          href: getPermalink('/landing/click-through'),
+          href: getPermalink('/about'),
         },
         {
           text: '정밀가공기술',
-          href: getPermalink('/landing/product'),
+          href: getPermalink('/about'),
         },
         {
           text: '정밀측정기술',
-          href: getPermalink('/landing/product'),
+          href: getPermalink('/about'),
         },
       ],
     },
@@ -78,15 +78,15 @@ export const headerData = {
       links: [
         {
           text: '공지사항',
-          href: getPermalink('/landing/lead-generation'),
+          href: getBlogPermalink(),
         },
         {
           text: '인증자료',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/terms'),
         },
         {
           text: '보도자료',
-          href: getPermalink('/landing/click-through'),
+          href: getPermalink('tutorials', 'category'),
         },
       ],
     },
@@ -95,24 +95,57 @@ export const headerData = {
       links: [
         {
           text: '문의사항',
-          href: getBlogPermalink(),
+          href: getPermalink('/contact'),
         },
         {
           text: '견적접수',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('/privacy'),
         },
-        // {
-        //   text: 'Article (with MDX)',
-        //   href: getPermalink('markdown-elements-demo-post', 'post'),
-        // },
-        // {
-        //   text: 'Category Page',
-        //   href: getPermalink('tutorials', 'category'),
-        // },
-        // {
-        //   text: 'Tag Page',
-        //   href: getPermalink('astro', 'tag'),
-        // },
+      ],
+    },
+    {
+      text: 'Samples',
+      links: [
+        {
+          text: 'SaaS',
+          href: getPermalink('/homes/saas'),
+        },
+        {
+          text: 'Startup',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/homes/mobile-app'),
+        },
+        {
+          text: 'Personal',
+          href: getPermalink('/homes/personal'),
+        },
+        {
+          text: 'Lead Generation',
+          href: getPermalink('/landing/lead-generation'),
+        },
+        {
+          text: 'Long-form Sales',
+          href: getPermalink('/landing/sales'),
+        },
+        {
+          text: 'Click-Through',
+          href: getPermalink('/landing/click-through'),
+        },
+        {
+          text: 'Product Details (or Services)',
+          href: getPermalink('/landing/product'),
+        },
+        {
+          text: 'Coming Soon or Pre-Launch',
+          href: getPermalink('/landing/pre-launch'),
+        },
+        {
+          text: 'Subscription',
+          href: getPermalink('/landing/subscription'),
+        },
       ],
     },
   ],
