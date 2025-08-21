@@ -1,0 +1,40 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '인사말 | 하늘엔지니어링',
+  description: '초고진공 및 극저온 기술 기반 설계·제작 전문기업 하늘엔지니어링의 인사말',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="인사말" subtitle="저희 하늘엔지니어링을 방문해 주셔서 감사합니다." imageSrc="/src/assets/images/company/greeting/hero.png" imageAlt="Greeting" />
+  <SideNav />
+
+  <section class="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <div class="grid gap-8 md:grid-cols-3 items-start">
+      <!-- Left: Portrait / Group Image -->
+      <div class="md:col-span-1">
+        <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 shadow">
+          <img src="/src/assets/images/default.png" alt="하늘엔지니어링 임직원" class="h-full w-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Right: Greeting Content -->
+      <div class="md:col-span-2">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">저희 하늘엔지니어링을 방문해 주셔서 감사합니다.</h1>
+        <div class="prose prose-lg dark:prose-invert">
+          <blockquote>
+            <p>안녕하십니까.<br/>저희 하늘엔지니어링을 방문해 주셔서 감사합니다.<br/>㈜하늘엔지니어링은 초고진공(Ultra High Vacuum) 및 극저온 (Cryogenic) 기술을 기반으로 한 장치개발 및 제작에 전념해 온 전문 기업입니다.<br/>오랜 연구와 제작 경험을 바탕으로 산업, 연구 등 다양한 분야에 최적화된 고품질 설비를 공급하고 있으며, 끊임없는 기술혁신과 고객 중심의 맞춤형 솔루션을 통해 최고의 파트너가 되기 위해 노력하고 있습니다.<br/>초고진공 및 극저온 분야는 미세한 기술이 큰 차이를 만들어내는 만큼,<br/>㈜하늘엔지니어링은 완벽에 가까운 품질과 철저한 사후관리로 고객 여러분의 신뢰에 보답하겠습니다.<br/>앞으로도 고객 여러분의 든든한 동반자로서 지속 가능한 성장을 이뤄 나가겠습니다.<br/>감사합니다.</p>
+          </blockquote>
+        </div>
+
+        <div class="mt-10 flex justify-end">
+          <p class="text-right font-semibold">㈜하늘엔지니어링 임직원 일동</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: '2차전지 관련사업 | 하늘엔지니어링',
+  description: '플라즈마 표면처리 장치, Non-Contact PCB, 200ppm Assembly Line 등 2차전지 제조 장비 전문업체입니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="2차전지 관련사업 (Battery Technology)" subtitle="플라즈마 표면처리 · Non-Contact PCB · 200ppm Assembly Line" imageSrc="/src/assets/images/business/battery/hero.png" imageAlt="Battery Technology Projects" />
+  <SideNav items={[
+    { href: '/business/fusion', label: '핵융합 사업' },
+    { href: '/business/accelerator', label: '가속기 사업' },
+    { href: '/business/aerospace', label: '우주항공 사업' },
+    { href: '/business/defense', label: '국방과학 사업' },
+    { href: '/business/battery', label: '2차전지 관련 사업' },
+    { href: '/business/semiconductor', label: '반도체 관련 사업' },
+  ]} />
+
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+    <h2 class="text-2xl font-bold mb-6">프로젝트 포트폴리오</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <img src="/src/assets/images/default.png" alt="플라즈마 표면 처리 장치" class="w-full h-56 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">플라즈마 표면 처리 장치 제작 및 설치 / LG PRI (신진엠텍/나인테크)</h3>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <img src="/src/assets/images/default.png" alt="Non Contact PCB Develop" class="w-full h-56 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Non Contact PCB Develop (설계/전장/제어/제작/조립)</h3>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden md:col-span-2">
+        <img src="/src/assets/images/default.png" alt="2차전지 200ppm Assembly Line" class="w-full h-56 md:h-72 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">2차전지 200ppm Assembly Line (설계/전장/제작/조립)</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

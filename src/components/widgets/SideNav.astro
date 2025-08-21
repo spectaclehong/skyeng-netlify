@@ -1,0 +1,71 @@
+---
+export interface NavItem { href: string; label: string }
+export interface Props { items?: NavItem[] }
+import { headerData } from '~/navigation';
+
+const { items: propItems } = Astro.props as Props;
+
+function deriveItemsFromNavigation(pathname: string): NavItem[] {
+  try {
+    const groups = headerData.links as Array<{ text: string; links: Array<{ text: string; href: string }> }>;
+    const candidates = groups.map((g) => {
+      const first = g.links?.[0]?.href || '/';
+      const prefix = '/' + first.split('/').filter(Boolean)[0]; // '/business', '/company', etc.
+      return { prefix, items: g.links.map((l) => ({ href: l.href, label: l.text })) };
+    });
+    // Find best match by longest prefix match
+    candidates.sort((a, b) => b.prefix.length - a.prefix.length);
+    const match = candidates.find((c) => pathname.startsWith(c.prefix));
+    return match?.items || [];
+  } catch (_) {
+    return [];
+  }
+}
+
+const items = (propItems && propItems.length > 0) ? propItems : deriveItemsFromNavigation(Astro.url.pathname);
+---
+<nav aria-label="Section navigation">
+  <!-- Hover-reveal edge hotspot + sliding panel (desktop/tablet) -->
+  <div class="hidden md:block fixed left-0 top-0 h-screen w-36 group/nav z-50">
+    <!-- Peek handle (soft glow) -->
+    <div class="absolute top-1/2 -translate-y-1/2 left-0 h-24 w-2 rounded-r-full bg-accent/40 blur-sm group-hover/nav:bg-accent/60"></div>
+
+    <!-- Sliding panel -->
+    <div class="pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 w-64 -translate-x-full group-hover/nav:translate-x-0 transition-transform duration-200 ease-out">
+      <div class="rounded-r-2xl shadow-2xl bg-white/90 dark:bg-gray-900/80 border border-white/40 dark:border-white/10 backdrop-blur-xl ring-1 ring-black/5 dark:ring-white/5 p-4">
+        <ul class="space-y-1.5 text-sm">
+          {items.map((item) => {
+            const isActive = Astro.url.pathname === item.href;
+            return (
+              <li>
+                <a href={item.href} aria-current={isActive ? 'page' : undefined} class={`relative flex items-center gap-2 rounded-lg px-3 py-2 transition ${isActive ? 'text-accent font-semibold bg-accent/5' : 'text-gray-800 dark:text-gray-200 hover:bg-gray-100/60 dark:hover:bg-white/5'}`}>
+                  <span class={`absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-r ${isActive ? 'bg-accent' : 'bg-transparent'}`}></span>
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile horizontal nav -->
+  <div class="md:hidden mx-auto max-w-6xl px-6 py-4">
+    <div class="flex gap-2 overflow-x-auto no-scrollbar">
+      {items.map((item) => {
+        const isActive = Astro.url.pathname === item.href;
+        return (
+          <a href={item.href} class={`whitespace-nowrap rounded-full border px-3 py-1 text-xs ${isActive ? 'border-accent text-accent' : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300'}`}>{item.label}</a>
+        );
+      })}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+

@@ -1,0 +1,101 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '문의사항 | 하늘엔지니어링',
+  description: '하늘엔지니어링에 대한 문의사항이 있으시면 언제든지 연락주시기 바랍니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Tabs: Inquiry | Quote -->
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+    <div class="mb-8">
+      <input id="tab-inquiry" type="radio" name="support-tab" class="peer/tab-inquiry hidden" checked>
+      <input id="tab-quote" type="radio" name="support-tab" class="peer/tab-quote hidden">
+
+      <div class="flex gap-3 border-b border-gray-200 dark:border-gray-800">
+        <label for="tab-inquiry" class="cursor-pointer px-4 py-2 text-sm font-medium peer-checked/tab-inquiry:border-b-2 peer-checked/tab-inquiry:border-accent peer-checked/tab-inquiry:text-accent text-gray-600 dark:text-gray-400">일반 문의사항</label>
+        <label for="tab-quote" class="cursor-pointer px-4 py-2 text-sm font-medium peer-checked/tab-quote:border-b-2 peer-checked/tab-quote:border-accent peer-checked/tab-quote:text-accent text-gray-600 dark:text-gray-400">프로젝트 견적접수</label>
+      </div>
+
+      <!-- Inquiry Form -->
+      <div class="mt-8 space-y-8 peer-checked/tab-inquiry:block peer-checked/tab-quote:hidden">
+        <div>
+          <h1 class="text-2xl font-bold mb-2">무엇이든 물어보세요</h1>
+          <p class="text-sm text-gray-600 dark:text-gray-400">아래 양식을 작성해주시면 담당자가 신속하게 검토 후 연락드리겠습니다.</p>
+        </div>
+        <form class="grid md:grid-cols-3 gap-4">
+          <div class="md:col-span-2 grid md:grid-cols-2 gap-4">
+            <input class="input input-bordered" placeholder="회사명*" required />
+            <input class="input input-bordered" placeholder="담당자명*" required />
+            <input class="input input-bordered" type="tel" placeholder="연락처*" required />
+            <input class="input input-bordered" type="email" placeholder="이메일*" required />
+            <select class="input input-bordered" required>
+              <option value="">문의유형 선택*</option>
+              <option>기술문의</option>
+              <option>구매문의</option>
+              <option>견적의뢰</option>
+              <option>기타</option>
+            </select>
+            <input class="input input-bordered" placeholder="제목*" required />
+            <textarea class="input input-bordered md:col-span-2 min-h-[140px]" placeholder="내용*" required></textarea>
+            <input class="input input-bordered md:col-span-2" type="file" />
+            <label class="md:col-span-2 inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <input type="checkbox" required /> 개인정보 수집 및 이용에 동의합니다.*
+            </label>
+            <button class="md:col-span-2 inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white">문의 등록하기</button>
+          </div>
+          <aside class="md:col-span-1 rounded-lg border border-gray-200 dark:border-gray-800 p-4">
+            <h3 class="text-sm font-semibold mb-2">빠른 상담이 필요하신가요?</h3>
+            <ul class="text-sm space-y-1">
+              <li><strong>대표전화:</strong> 063-XXX-XXXX</li>
+              <li><strong>팩스:</strong> 063-XXX-XXXX</li>
+              <li><strong>대표 이메일:</strong> info@skyeng.co.kr</li>
+              <li><strong>업무시간:</strong> 평일 09:00 - 18:00 (점심 12:00 - 13:00)</li>
+            </ul>
+          </aside>
+        </form>
+      </div>
+
+      <!-- Quote Form (same layout) -->
+      <div class="mt-8 hidden peer-checked/tab-quote:block peer-checked/tab-inquiry:hidden">
+        <div>
+          <h1 class="text-2xl font-bold mb-2">프로젝트 견적을 의뢰하세요</h1>
+          <p class="text-sm text-gray-600 dark:text-gray-400">아래 양식을 작성해주시면 담당자가 신속하게 검토 후 연락드리겠습니다.</p>
+        </div>
+        <form class="grid md:grid-cols-3 gap-4">
+          <div class="md:col-span-2 grid md:grid-cols-2 gap-4">
+            <input class="input input-bordered" placeholder="회사명*" required />
+            <input class="input input-bordered" placeholder="담당자명*" required />
+            <input class="input input-bordered" type="tel" placeholder="연락처*" required />
+            <input class="input input-bordered" type="email" placeholder="이메일*" required />
+            <select class="input input-bordered" required>
+              <option value="">문의유형 선택*</option>
+              <option>기술문의</option>
+              <option>구매문의</option>
+              <option>견적의뢰</option>
+              <option>기타</option>
+            </select>
+            <input class="input input-bordered" placeholder="제목*" required />
+            <textarea class="input input-bordered md:col-span-2 min-h-[140px]" placeholder="내용*" required></textarea>
+            <input class="input input-bordered md:col-span-2" type="file" />
+            <label class="md:col-span-2 inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <input type="checkbox" required /> 개인정보 수집 및 이용에 동의합니다.*
+            </label>
+            <button class="md:col-span-2 inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white">문의 등록하기</button>
+          </div>
+          <aside class="md:col-span-1 rounded-lg border border-gray-200 dark:border-gray-800 p-4">
+            <h3 class="text-sm font-semibold mb-2">빠른 상담이 필요하신가요?</h3>
+            <ul class="text-sm space-y-1">
+              <li><strong>대표전화:</strong> 063-XXX-XXXX</li>
+              <li><strong>팩스:</strong> 063-XXX-XXXX</li>
+              <li><strong>대표 이메일:</strong> info@skyeng.co.kr</li>
+              <li><strong>업무시간:</strong> 평일 09:00 - 18:00 (점심 12:00 - 13:00)</li>
+            </ul>
+          </aside>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

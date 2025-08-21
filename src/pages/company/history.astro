@@ -1,89 +1,67 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-
-import { headerData } from '~/navigation';
-import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'Company History',
+  title: '연혁 | 하늘엔지니어링',
+  description: '2000년 설립부터 현재까지 하늘엔지니어링의 주요 발자취와 성장 과정을 소개합니다.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <Steps
-    items={[
-      {
-        title: '2000. 05',
-        description:
-          "하늘엔지니어링 설립, 한국형 핵융합 실험로 (KSTAR) 프로젝트 참여",
-        // icon: 'tabler:package',
-      },
-      {
-        title: '2004. 11',
-        description:
-          '핵융합 실증로 (ITER) 프로젝트 참여, ISO 9001:2000 품질경영시스템 인증 획득',
-        icon: 'tabler:paint',
-      },
-      {
-        title: '2005. 10',
-        description: 
-            "국내 최초 대구경 천체 망원경 (600MM) 시스템 개발",
-        icon: 'tabler:check',
-      },
-      {
-        title: '2007. 08',
-        description:
-            "기업부설 연구소 설립",
-        icon: 'tabler:package',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/front-view.png',
-      alt: 'Front View',
-    }}
-  />
-  <Steps
-  isReversed
-  items={[
-    {
-      title: '2008. 06',
-      description:
-        "기술혁신형 중소기업 (INNO-BIZ) 선정, 벤처기업 인증",
-      icon: 'tabler:letter-case',
-    },
-    {
-      title: '2009. 10',
-      description:
-        "국무 총리 표창 / 과학 기술 부분",
-      icon: 'tabler:paint',
-    },
-    {
-      title: '2013. 11',
-      description:
-        "현대중공업㈜ 1차 협력사 등록",
-      icon: 'tabler:check',
-    },
-    {
-      title: '2018. 03',
-      description:
-        "LG 전자 1차  협력사 등록 / 특정설비 제조 인증 획득",
-      icon: 'tabler:check',
-    },
-    {
-      title: '2021. 02',
-      description:
-        "㈜로보스타 1차 협력사 등록",
-      icon: 'tabler:check',
-    },
-  ]}
-  image={{
-    src: '~/assets/images/side-view.png',
-    alt: 'Side view',
-  }}
-/>
+  <!-- Hero Section -->
+  <Hero3 title="연혁" subtitle="도전과 혁신의 발자취" imageSrc="/src/assets/images/company/history/hero.png" imageAlt="연혁" />
+  <SideNav />
+
+  <!-- Company Growth Timeline replaced with central vertical alternating layout per spec -->
+  <section id="timeline" class="mx-auto max-w-5xl px-6 py-16 md:py-24">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">주요 연혁</h2>
+    <p class="text-gray-600 dark:text-gray-400 mb-10">국가 대형 프로젝트 참여를 통한 지속적 성장</p>
+
+    <div class="relative">
+      <div class="absolute left-1/2 -translate-x-1/2 h-full w-px bg-gray-200 dark:bg-gray-800" aria-hidden="true"></div>
+
+      {[
+        { year: '2000. 05', title: '하늘엔지니어링 설립', desc: '한국형 핵융합 실험로 (KSTAR) 프로젝트 참여' },
+        { year: '2004. 11', title: '핵융합 실증로 (ITER) 프로젝트 참여', desc: 'ISO 9001:2000 품질경영시스템 인증 획득' },
+        { year: '2005. 10', title: '국내 최초 대구경 천체 망원경 (600MM) 시스템 개발', desc: '' },
+        { year: '2007. 08', title: '기업부설 연구소 설립', desc: '' },
+        { year: '2008. 06', title: '기술혁신형 중소기업 (INNO-BIZ) 선정', desc: '벤처기업 인증' },
+        { year: '2009. 10', title: '국무 총리 표창', desc: '과학 기술 부문' },
+        { year: '2013. 11', title: '현대중공업㈜ 1차 협력사 등록', desc: '' },
+        { year: '2018. 03', title: 'LG 전자 1차 협력사 등록', desc: '특정설비 제조 인증 획득' },
+        { year: '2021. 02', title: '㈜로보스타 1차 협력사 등록', desc: '' },
+      ].map((item, idx) => (
+        <div class={`relative grid md:grid-cols-2 gap-8 items-start mb-12`}>
+          {idx % 2 === 0 ? (
+            <div class="md:pr-10 md:text-right">
+              <h3 class="text-lg font-semibold">{item.year}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{item.title}</p>
+              <p class="mt-2 text-sm">{item.desc}</p>
+            </div>
+          ) : <div></div>}
+
+          <div class="relative">
+            <div class="absolute -left-4 md:left-[-0.55rem] top-2 h-3 w-3 rounded-full bg-accent border-2 border-white dark:border-gray-900"></div>
+            {idx % 2 === 0 ? (
+              <div></div>
+            ) : (
+              <div class="md:pl-10">
+                <h3 class="text-lg font-semibold">{item.year}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{item.title}</p>
+                <p class="mt-2 text-sm">{item.desc}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="text-xs text-gray-500 dark:text-gray-400 mt-6">각 연혁 항목 옆 이미지 영역은 추후 사진 자료 업데이트 시 삽입합니다.</p>
+  </section>
+
+  <!-- Recognition widgets removed to focus on timeline + media per spec -->
+
 </Layout>

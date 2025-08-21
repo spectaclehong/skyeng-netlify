@@ -1,0 +1,128 @@
+---
+export interface Props {
+  id?: string;
+  class?: string;
+  address?: string;
+  lat?: number;
+  lng?: number;
+  zoom?: number;
+  markerTitle?: string;
+  provider?: 'js' | 'embed';
+}
+
+const {
+  id: propId,
+  class: className = 'aspect-video w-full rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800',
+  address = '',
+  lat,
+  lng,
+  zoom = 13,
+  markerTitle,
+  provider = 'js',
+} = Astro.props as Props;
+
+const elementId = propId || `gm_${Math.random().toString(36).slice(2)}`;
+const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+const useEmbed = provider === 'embed' || (!apiKey && (typeof lat === 'number' && typeof lng === 'number'));
+const embedQuery = (typeof lat === 'number' && typeof lng === 'number')
+  ? `${lat},${lng}`
+  : (address ? encodeURIComponent(address) : '');
+const embedSrc = embedQuery
+  ? `https://www.google.com/maps?q=${embedQuery}&z=${zoom}&output=embed`
+  : '';
+---
+{useEmbed ? (
+  <iframe src={embedSrc} class={className} style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+) : (
+  <div id={elementId} class={className} data-address={address} data-lat={lat} data-lng={lng} data-zoom={zoom} data-title={markerTitle || address}></div>
+)}
+
+{!useEmbed && (
+<script is:inline>
+  (function() {
+    const API_KEY = "{apiKey}";
+    const MAPS_SRC_ID = 'google-maps-js';
+    const MAPS_API_URL = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`;
+
+    function loadGoogleMaps() {
+      return new Promise((resolve, reject) => {
+        if (window.google && window.google.maps) return resolve(window.google.maps);
+        let script = document.getElementById(MAPS_SRC_ID);
+        if (script) {
+          script.addEventListener('load', () => resolve(window.google.maps), { once: true });
+          script.addEventListener('error', reject, { once: true });
+          return;
+        }
+        script = document.createElement('script');
+        script.id = MAPS_SRC_ID;
+        script.src = MAPS_API_URL;
+        script.async = true;
+        script.defer = true;
+        script.onload = () => resolve(window.google.maps);
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    async function init() {
+      const el = document.getElementById("{elementId}");
+      if (!el) return;
+      try {
+        await loadGoogleMaps();
+        const maps = window.google.maps;
+        const latAttr = el.getAttribute('data-lat');
+        const lngAttr = el.getAttribute('data-lng');
+        const zoomAttr = el.getAttribute('data-zoom');
+        const titleAttr = el.getAttribute('data-title') || '';
+        const addr = el.getAttribute('data-address') || '';
+
+        const map = new maps.Map(el, {
+          center: { lat: 37.5665, lng: 126.9780 },
+          zoom: zoomAttr ? Number(zoomAttr) : 13,
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: false,
+        });
+
+        function placeMarkerAt(position) {
+          map.setCenter(position);
+          new maps.Marker({ map, position, title: titleAttr || addr });
+        }
+
+        if (latAttr && lngAttr) {
+          placeMarkerAt({ lat: Number(latAttr), lng: Number(lngAttr) });
+        } else if (addr) {
+          const geocoder = new maps.Geocoder();
+          geocoder.geocode({ address: addr }, (results, status) => {
+            if (status === 'OK' && results && results[0]) {
+              const loc = results[0].geometry.location;
+              placeMarkerAt(loc);
+            }
+          });
+        }
+
+        // Recenter on custom event (useful for tabs)
+        const recenter = () => {
+          const c = map.getCenter();
+          map.setCenter(c);
+        };
+        window.addEventListener('maps:recenter', () => setTimeout(recenter, 50));
+
+        // Resize observer to handle container size changes
+        const ro = new ResizeObserver(() => setTimeout(recenter, 50));
+        ro.observe(el);
+      } catch (e) {
+        // noop
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+)}
+
+

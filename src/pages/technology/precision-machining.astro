@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: '정밀가공기술 | 하늘엔지니어링',
+  description: 'CNC 머시닝센터, 5축 가공기 등을 활용한 고정밀 기계가공 및 대형 부품 가공 기술을 보유하고 있습니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="정밀가공기술 (Precision Machining)" subtitle="CNC 머시닝센터, 5축 가공기 등을 활용한 고정밀 가공" imageSrc="/src/assets/images/technology/precision-machining/hero.png" imageAlt="Precision Machining Technology" />
+  <SideNav />
+
+  <!-- 1. UHV/크라이오제닉 정밀 가공 (Precision CNC Machining) -->
+  <section class="mx-auto max-w-6xl px-6 py-12 md:py-16">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="prose prose-lg dark:prose-invert">
+        <h2>1. UHV/크라이오제닉 정밀 가공 (Precision CNC Machining)</h2>
+        <blockquote>
+          <p>마이크로미터 수준의 정밀 가공을 위해 고정밀 CNC 머시닝 기술을 활용합니다. 이를 통해 진공 밀폐성과 치수 안정성이 필수적인 부품 제작이 가능합니다.<br/>구리(Cu, CuCrZr, Glidcop), 스테인리스강, 티타늄 등의 다양한 소재 가공 경험을 바탕으로 우수한 열·기계적·전기적 특성을 갖춘 부품 생산이 가능합니다.</p>
+        </blockquote>
+      </div>
+      <div>
+        <img src="/src/assets/images/default.png" alt="정밀 가공된 Glidcop 부품" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 무기성 절삭유 및 클린 가공 환경 -->
+  <section class="mx-auto max-w-6xl px-6 pb-12">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="prose prose-lg dark:prose-invert">
+        <h2>2. 무기성 절삭유 및 클린 가공 환경</h2>
+        <blockquote>
+          <p>유기성 절삭유는 오염 및 아웃가싱을 유발할 수 있으므로 사용이 제한됩니다. 대신 무기성 절삭유를 사용하며, 소재 교체 시마다 엄격한 청소 과정을 시행합니다.<br/>크린룸 수준의 청정 환경에서 가공이 이루어지며, 교차 오염 방지를 위해 작업 전·후에 도구 및 기계의 철저한 세척이 필수입니다.</p>
+        </blockquote>
+      </div>
+      <div>
+        <img src="/src/assets/images/default.png" alt="클린 가공 환경" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 초저 누설률 금속 실링 (Metal Seals) -->
+  <section class="mx-auto max-w-6xl px-6 pb-20">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="prose prose-lg dark:prose-invert">
+        <h2>3. 초저 누설률 금속 실링 (Metal Seals)</h2>
+        <blockquote>
+          <p>UHV 및 극저온 환경에서 요구되는 극도로 낮은 헬륨 누설률(&lt; 1×10⁻¹³ atm·cm³/s He)과 낮은 Out-gassing 특성을 지닌 금속 실링(예: HELICOFLEX® DELTA 등)이 사용됩니다.<br/>이러한 실링은 극저온 내구성, 내방사선성, 장기 내구성, 및 고온 베이크아웃 대응성을 제공합니다.</p>
+        </blockquote>
+      </div>
+      <div>
+        <img src="/src/assets/images/default.png" alt="HELICOFLEX DELTA 금속 실링" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      </div>
+    </div>
+  </section>
+
+  <Features3
+    title="가공 정밀도"
+    subtitle="마이크론 단위의 정밀 가공 능력"
+    columns={3}
+    items={[
+      {
+        title: '±0.01mm',
+        description: '일반 가공 정밀도',
+        icon: 'tabler:ruler-measure',
+      },
+      {
+        title: '±0.005mm',
+        description: '정밀 가공 정밀도',
+        icon: 'tabler:focus-2',
+      },
+      {
+        title: '표면조도 Ra 0.8μm',
+        description: '고품질 표면 가공',
+        icon: 'tabler:diamond',
+      },
+    ]}
+  />
+</Layout>

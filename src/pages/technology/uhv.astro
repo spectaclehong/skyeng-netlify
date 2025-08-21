@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '초고진공 기술 (UHV) | 하늘엔지니어링',
+  description: '10⁻⁷ ~ 10⁻¹² Torr급 초고진공 환경 구현을 위한 설계·제작·시험·설치 턴키 솔루션',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3
+    title="초고진공 기술 (Ultra-High Vacuum, UHV)"
+    subtitle="대기압보다 수십억 배 낮은 압력의 환경을 생성·유지하는 기술"
+    imageSrc="/src/assets/images/technology/uhv/hero.png"
+    imageAlt="UHV"
+  />
+  <SideNav />
+
+  <!-- 기술 정의 -->
+  <section class="mx-auto max-w-4xl px-6 py-12 md:py-16">
+    <div class="prose prose-lg dark:prose-invert">
+      <blockquote>
+        <p><strong>초고진공 기술 (Ultra-High Vacuum, UHV)</strong><br/>초고진공기술(Ultra-High Vacuum, UHV)은 대기압보다 수십억 배 낮은 압력(10⁻⁷ ~ 10⁻¹² Torr 이하)의 환경을 생성하고 유지하는 기술입니다. 이러한 진공 환경은 분자 충돌이 극히 드물어, 표면 반응, 박막 증착, 전자빔 분석 등 정밀 작업이 가능해지며, 반도체, 표면과학, 우주 시뮬레이션, 양자기술 등 첨단 산업과 연구에 필수적으로 사용됩니다.<br/>당사는 10⁻⁶ Torr 이하의 고진공 및 초고진공 환경 구현을 위한 설계, 제작, 조립, 테스트 전 과정을 자체 수행하며, 고객의 용도에 맞춘 맞춤형 솔루션을 제공합니다. 진공챔버, 펌핑시스템, 진공계측기, 자동제어시스템 등을 포함한 Turn-Key 솔루션을 제공합니다.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 핵심 솔루션 -->
+  <section class="mx-auto max-w-6xl px-6 pb-12 space-y-10">
+    <h2 class="text-xl md:text-2xl font-bold">핵심 솔루션</h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">"당사의 설계, 제작, Baking Test 및 Leak Test 경험의 장치들은 다음과 같습니다."</p>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="진공 챔버" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">1. 진공챔버 (Vacuum Chamber)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>고진공 및 초고진공 환경을 형성하는 밀폐 용기</li>
+          <li>스테인리스(SS304, SS316L, SS316L(N) 등) 재질 사용</li>
+          <li>내부 처리: 전해연마, 베이킹(Baking) 가능 구조</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="진공 게이지" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">2. 진공 게이지 (Vacuum Gauges)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>시스템 내 압력을 정밀하게 측정</li>
+          <li>Pirani Gauge: 10⁻³ ~ 1 Torr</li>
+          <li>Cold Cathode / Hot Cathode Gauge (Ion Gauge): 10⁻⁸ Torr 이하 측정 가능</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="베이킹 시스템" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">3. 베이킹 시스템 (Bake-out System)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>챔버 벽면에 흡착된 수분과 불순물을 제거하기 위한 열처리 시스템</li>
+          <li>통상 100°C~250°C 이상으로 가열</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="진공 배관 및 피팅" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">4. 진공 배관 및 피팅 (UHV Plumbing)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>누설률이 거의 없는 CF 플랜지(CF Flange), VCR 피팅 등 사용</li>
+          <li>금속 가스켓(Copper gasket, Helicoflex gasket) 적용</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

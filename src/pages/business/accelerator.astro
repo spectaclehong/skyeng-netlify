@@ -1,0 +1,56 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '가속기사업 | 하늘엔지니어링',
+  description: 'RISP 가속기 프로젝트의 SRF 시스템 및 헬륨 분배 시스템 설계·제작 전문업체입니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero3 title="가속기 사업" subtitle="RISP 중이온 가속기 핵심 시설 경험" imageSrc="/src/assets/images/business/accelerator/hero.png" imageAlt="RISP Accelerator Tunnel" />
+  <SideNav items={[
+    { href: '/business/fusion', label: '핵융합 사업' },
+    { href: '/business/accelerator', label: '가속기 사업' },
+    { href: '/business/aerospace', label: '우주항공 사업' },
+    { href: '/business/defense', label: '국방과학 사업' },
+    { href: '/business/battery', label: '2차전지 관련 사업' },
+    { href: '/business/semiconductor', label: '반도체 관련 사업' },
+  ]} />
+
+  <!-- 1) RISP Detailed Design -->
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+    <h2 class="text-2xl font-bold mb-4">1) Accelerator (RISP) Detailed Design</h2>
+    <ul class="list-disc pl-5 text-sm space-y-1">
+      <li>SRF System (LHe Distribution, Warm Pumping, LHe Gas Management, Cold Box)</li>
+      <li>ISOL Target Ion Source Module, Hot Cell Remote Handling</li>
+    </ul>
+  </section>
+
+  <!-- 2) Manufacturing Portfolio -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <h2 class="text-2xl font-bold mb-6">2) Manufacturing</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        'Rare isotope Accelerator – Helium Distribution System Prototype',
+        'Rare isotope Accelerator – SRF Cryo system',
+        'Rare isotope Accelerator – TBX, Helium Distribution Box',
+        'Rare isotope Accelerator – TIS module system',
+        'Rare isotope Accelerator – RHS (Remote Handling System)',
+        'Rare isotope Accelerator – TIS Module Pail Storage System',
+        'Rare isotope Accelerator – Proton Beam Module',
+        'Rare isotope Accelerator – Focus Plane Vacuum Chamber',
+        'Rare isotope Accelerator – RI Beam Module System',
+      ].map((txt) => (
+        <div class="rounded-lg border border-gray-200 dark:border-gray-800 p-4">
+          <p class="text-sm">{txt}</p>
+          <div class="mt-3 aspect-video bg-gray-100 dark:bg-gray-800 rounded"></div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

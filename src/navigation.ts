@@ -7,7 +7,7 @@ export const headerData = {
       links: [
         {
           text: '인사말',
-          href: getPermalink('/company/message'),
+          href: getPermalink('/company/greeting'),
         },
         {
           text: '연혁',
@@ -15,7 +15,7 @@ export const headerData = {
         },
         {
           text: '사업장소개',
-          href: getPermalink('/company/location'),
+          href: getPermalink('/company/locations'),
         },
       ],
     },
@@ -24,27 +24,27 @@ export const headerData = {
       links: [
         {
           text: '핵융합사업',
-          href: getPermalink('/#features'),
+          href: getPermalink('/business/fusion'),
         },
         {
           text: '가속기사업',
-          href: getPermalink('/#content'),
+          href: getPermalink('/business/accelerator'),
         },
         {
           text: '우주항공사업',
-          href: getPermalink('/#content2'),
+          href: getPermalink('/business/aerospace'),
         },
         {
           text: '국방과학사업',
-          href: getPermalink('/#content3'),
+          href: getPermalink('/business/defense'),
         },
         {
           text: '2차전지 관련사업',
-          href: getPermalink('/#content4'),
+          href: getPermalink('/business/battery'),
         },
         {
           text: '반도체 관련사업',
-          href: getPermalink('/#features2'),
+          href: getPermalink('/business/semiconductor'),
         },
       ],
     },
@@ -53,23 +53,23 @@ export const headerData = {
       links: [
         {
           text: '극저온기술',
-          href: getPermalink('/technoledge/low-temperature'),
+          href: getPermalink('/technology/cryogenic'),
         },
         {
           text: '고진공기술',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/technology/uhv'),
         },
         {
           text: '특수용접기술',
-          href: getPermalink('/services'),
+          href: getPermalink('/technology/specialwelding'),
         },
         {
           text: '정밀가공기술',
-          href: getPermalink('/about'),
+          href: getPermalink('/technology/precision-machining'),
         },
         {
           text: '정밀측정기술',
-          href: getPermalink('/about'),
+          href: getPermalink('/technology/precision-measurement'),
         },
       ],
     },
@@ -78,15 +78,15 @@ export const headerData = {
       links: [
         {
           text: '공지사항',
-          href: getBlogPermalink(),
+          href: getPermalink('/pr/notice'),
         },
         {
           text: '인증자료',
-          href: getPermalink('/terms'),
+          href: getPermalink('/pr/certifications'),
         },
         {
           text: '보도자료',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('/pr/press'),
         },
       ],
     },
@@ -95,123 +95,67 @@ export const headerData = {
       links: [
         {
           text: '문의사항',
-          href: getPermalink('/contact'),
+          href: getPermalink('/support/inquiry'),
         },
         {
           text: '견적접수',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'Samples',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          href: getPermalink('/support/quote'),
         },
       ],
     },
   ],
-  // actions: [{ text: '문의하기', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: '프로젝트 상담', href: getPermalink('/support/quote'), target: '_self' }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: '회사소개',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: '인사말', href: getPermalink('/company/message') },
+        { text: '연혁', href: getPermalink('/company/history') },
+        { text: '사업장소개', href: getPermalink('/company/location') },
       ],
     },
     {
-      title: 'Platform',
+      title: '사업분야',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: '핵융합사업', href: getPermalink('/business/fusion') },
+        { text: '가속기사업', href: getPermalink('/business/accelerator') },
+        { text: '우주항공사업', href: getPermalink('/business/aerospace') },
+        { text: '국방과학사업', href: getPermalink('/business/defense') },
       ],
     },
     {
-      title: 'Support',
+      title: '보유기술',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: '극저온기술', href: getPermalink('/technology/cryogenic') },
+        { text: '고진공기술', href: getPermalink('/technology/uhv') },
+        { text: '특수용접기술', href: getPermalink('/technology/specialwelding') },
+        { text: '정밀가공기술', href: getPermalink('/technology/precision-machining') },
       ],
     },
     {
-      title: 'Company',
+      title: '고객지원',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: '문의사항', href: getPermalink('/support/inquiry') },
+        { text: '견적접수', href: getPermalink('/support/quote') },
+        { text: '공지사항', href: getPermalink('/pr/notice') },
+        { text: '인증자료', href: getPermalink('/pr/certifications') },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: '개인정보처리방침', href: getPermalink('/privacy') },
+    { text: '이용약관', href: getPermalink('/terms') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: '이메일', icon: 'tabler:mail', href: 'mailto:info@skyeng.co.kr' },
+    { ariaLabel: '전화', icon: 'tabler:phone', href: 'tel:+82-63-XXX-XXXX' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    <span class="font-semibold">㈜하늘엔지니어링</span> · 전북 군산시 산업로 1336-17 (삼산동) · 대표이사: OOO<br>
+    사업자등록번호: XXX-XX-XXXXX · 통신판매업신고번호: 제XXXX-전북군산-XXXX호<br>
+    © 2024 Sky Engineering Co., Ltd. All rights reserved.
   `,
 };

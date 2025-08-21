@@ -1,0 +1,94 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '특수용접 기술 | 하늘엔지니어링',
+  description: 'UHV·극저온 설비에 요구되는 고청정·고정밀 특수용접 기술',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="고신뢰성 · 고정밀 · 고청정의 용접 솔루션" subtitle="자동 Orbital 용접 기반 UHV·Cryogenic 설비 전문" imageSrc="/src/assets/images/technology/specialwelding/hero.png" imageAlt="Special Welding" />
+  <SideNav />
+
+  <!-- 기술 개요 -->
+  <section class="mx-auto max-w-4xl px-6 py-12 md:py-16">
+    <div class="prose prose-lg dark:prose-invert">
+      <blockquote>
+        <p>극한 환경에서의 성능과 안전성을 확보하기 위해, 진공 및 극저온 장비에는 일반 용접과 차별화된 고난이도 특수용접 기술이 필수적입니다.<br/>당사는 초고진공(UHV) 및 극저온(-196℃ 이하) 환경에서 요구되는 기밀성, 내구성, 금속재료 특성에 최적화된 전문 용접 기술을 제공합니다.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 보유 용접 기술 -->
+  <section class="mx-auto max-w-6xl px-6 pb-12 space-y-10">
+    <h2 class="text-xl md:text-2xl font-bold">보유 용접 기술</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="TIG 용접" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">1. TIG 용접 (GTAW: Gas Tungsten Arc Welding)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>고청정, 고정밀 용접에 최적</li>
+          <li>UHV 및 극저온 설비 표준 공정</li>
+          <li>스테인리스강(SS304/316L/SS316LN), 알루미늄, 인코넬 등 다양한 재료 대응</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="자동 Orbital 용접" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">2. 자동 Orbital 용접</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>일정한 품질과 정밀도를 보장</li>
+          <li>UHV 배관 및 진공라인에 적합</li>
+          <li>반복성과 기밀성이 요구되는 대형 프로젝트에 활용</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="EB 용접" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">3. EB 용접 (Electron Beam Welding) [선택적 기술]</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>진공 상태에서 진행되는 정밀 용접</li>
+          <li>소재 내부까지 깊은 침투가 가능</li>
+          <li>항공우주, 핵융합 장비, 고에너지 실험장비에 사용</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="레이저 용접" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">4. 레이저 용접 (Laser Welding)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>국부열로 인한 변형 최소화</li>
+          <li>정밀한 부품 및 소형 진공 부품 제작에 적합</li>
+          <li>용접 이음면의 미세 기공 방지에 유리</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 적용 분야 -->
+  <section class="mx-auto max-w-6xl px-6 pb-16">
+    <h2 class="text-xl md:text-2xl font-bold mb-6">적용 분야</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+      {[
+        '초고진공 챔버, UHV 배관',
+        '극저온 저장탱크 및 진공재킷',
+        '액화가스 시스템 (LN₂, LHe, LOX, LNG)',
+        '반도체/디스플레이 공정 장비',
+        '항공우주, 핵융합 장비',
+        '극저온 펌프 및 밸브 하우징',
+      ].map((txt) => (
+        <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">{txt}</div>
+      ))}
+    </div>
+  </section>
+</Layout>

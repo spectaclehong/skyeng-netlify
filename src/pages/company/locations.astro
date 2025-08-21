@@ -1,0 +1,90 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Content from '~/components/widgets/Content.astro';
+import GoogleMap from '~/components/widgets/GoogleMap.astro';
+
+const metadata = {
+  title: '사업장소개 | 하늘엔지니어링',
+  description: '하늘엔지니어링의 본사 및 제조시설 현황을 소개합니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="사업장소개" subtitle="총 19,650㎡의 대규모 제조시설과 최첨단 장비 보유" imageSrc="/src/assets/images/company/locations/hero.png" imageAlt="Company Facilities" />
+  <SideNav />
+
+  <!-- Tabs: HQ | Gunsan Branch (CSS-only) -->
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div class="mb-8 relative">
+      <input id="tab-hq" type="radio" name="fac-tab" class="hidden" checked>
+      <input id="tab-gunsan" type="radio" name="fac-tab" class="hidden">
+
+      <div class="flex gap-3 border-b border-gray-200 dark:border-gray-800">
+        <label for="tab-hq" class="cursor-pointer px-4 py-2 text-sm font-medium">본사</label>
+        <label for="tab-gunsan" class="cursor-pointer px-4 py-2 text-sm font-medium">군산지사</label>
+      </div>
+
+      <div class="content">
+        <!-- HQ Content -->
+        <div class="panel-hq space-y-8 mt-8">
+          <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+            <img src="/src/assets/images/hero-image.png" alt="본사 전경" class="w-full h-64 md:h-96 object-cover" />
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-3">기본 정보</h3>
+              <dl class="space-y-2 text-sm">
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">주소</dt><dd>대전광역시 유성구 용산동 543-1</dd></div>
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">대표전화</dt><dd>063-XXX-XXXX</dd></div>
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">팩스</dt><dd>063-XXX-XXXX</dd></div>
+              </dl>
+            </div>
+            <div>
+              <GoogleMap id="map-hq" provider="embed" address="대전광역시 유성구 용산동 543-1" zoom={15}/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gunsan Content -->
+        <div class="panel-gunsan space-y-8 mt-8">
+          <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+            <img src="/src/assets/images/default.png" alt="군산지사" class="w-full h-64 md:h-96 object-cover" />
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-3">기본 정보</h3>
+              <dl class="space-y-2 text-sm">
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">주소</dt><dd>전북 군산시 오식도동 가도로 81</dd></div>
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">전화</dt><dd>063-XXX-XXXX</dd></div>
+                <div class="flex gap-2"><dt class="w-16 text-gray-500">팩스</dt><dd>063-XXX-XXXX</dd></div>
+              </dl>
+            </div>
+            <div>
+              <GoogleMap id="map-hq" provider="embed" address="전북 군산시 오식도동 가도로 81" zoom={15}/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        #tab-hq:checked ~ .content .panel-hq { display: block; }
+        #tab-hq:checked ~ .content .panel-gunsan { display: none; }
+        #tab-gunsan:checked ~ .content .panel-hq { display: none; }
+        #tab-gunsan:checked ~ .content .panel-gunsan { display: block; }
+      </style>
+
+      <script is:inline>
+        function triggerRecenter() {
+          setTimeout(() => window.dispatchEvent(new Event('maps:recenter')), 100);
+        }
+        const hq = document.getElementById('tab-hq');
+        const gs = document.getElementById('tab-gunsan');
+        hq?.addEventListener('change', triggerRecenter);
+        gs?.addEventListener('change', triggerRecenter);
+      </script>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,109 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '극저온 기술 | 하늘엔지니어링',
+  description: '극저온 환경에서의 설계·제작·시험·설치까지 턴키 솔루션',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3
+    title="극저온 기술 (Cryogenic Technology)"
+    subtitle="액체헬륨·액체질소 등 극저온 환경에서의 설계·제작·시험·설치"
+    imageSrc="/src/assets/images/technology/cryogenic/hero.png"
+    imageAlt="Cryogenic"
+  />
+  <SideNav />
+
+  <!-- 기술 정의 -->
+  <section class="mx-auto max-w-4xl px-6 py-12 md:py-16">
+    <div class="prose prose-lg dark:prose-invert">
+      <blockquote>
+        <p><strong>극저온 기술 (Cryogenic Technology)</strong><br/>극저온기술(Cryogenic Technology)은 4.5k(-269°C)의 액체헬륨 또는 77k(-196°C)의 액체질소 환경과 같이 극도로 낮은 온도에서 물질의 성질을 제어하거나 활용하는 기술을 말합니다. 이 기술은 가스의 액화, 초전도체, 우주항공, 의료기기, 반도체 공정, 바이오 샘플 보관 등 다양한 첨단 산업에 필수적으로 활용됩니다.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 주요 적용분야 -->
+  <section class="mx-auto max-w-6xl px-6 pb-8">
+    <h2 class="text-xl md:text-2xl font-bold mb-6">주요 적용분야</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {[
+        '에너지 산업(LNG, 액화수소 저장 및 운송)',
+        '반도체 및 디스플레이 제조',
+        '우주 및 항공 산업(로켓연료, 극저온센서)',
+        '초전도 응용(핵융합, MRI, 양자컴퓨터 등)',
+        '바이오 및 의료 연구(세포, 조직, 백신보관)'
+      ].map((txt) => (
+        <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 text-sm">{txt}</div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 핵심 솔루션 -->
+  <section class="mx-auto max-w-6xl px-6 py-12 md:py-16 space-y-10">
+    <h2 class="text-xl md:text-2xl font-bold">핵심 솔루션</h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">"당사의 설계, 제작 및 Leak Test 경험의 장치들은 다음과 같습니다."</p>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="극저온 저장탱크" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">1. 극저온 저장탱크 (Cryogenic Storage Tanks)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>액체질소(LN₂), 액체산소(LOX), 액체헬륨(LHe) 등을 저장하는 고압 또는 진공 탱크</li>
+          <li>진공 이중벽 구조로 열 손실 최소화</li>
+          <li>핵융합장치, 가속기장치, 산업용, 의료용, 실험실용으로 다양하게 사용됨</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="액화기" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">2. 액화기 (Liquefier)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>공기, 수소, 헬륨 등의 가스를 냉각시켜 액체 상태로 만드는 장치</li>
+          <li>대형 산업용에서 실험실 소형 액화기까지 다양한 모델</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="극저온 밸브 및 배관" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">3. 극저온 밸브 & 배관 시스템</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>극저온 유체의 흐름을 제어하는 특수 밸브와 배관</li>
+          <li>내한재질, 진공단열 기술 적용</li>
+          <li>안전성 및 열손실 최소화 설계</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="진공 단열 이송관" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">4. 진공 단열 이송관 (Vacuum Insulated Transfer Line)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>극저온 유체 수송 시 열 손실을 최소화하는 파이프 시스템</li>
+          <li>액체헬륨, 액체질소, 액체산소 이송에 사용</li>
+          <li>초저온 상태 유지에 최적화</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img src="/src/assets/images/default.png" alt="극저온 펌프" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+      <div>
+        <h3 class="text-lg font-semibold mb-2">5. 극저온 펌프 (Cryogenic Pumps)</h3>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li>극저온 액체를 고압으로 이동시키는 펌프</li>
+          <li>터보펌프, 피스톤펌프, 기어펌프 등 다양한 종류 존재</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

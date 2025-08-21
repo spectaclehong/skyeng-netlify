@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: '정밀측정기술 | 하늘엔지니어링',
+  description: '3차원 측정기, 레이저 간섭계 등을 활용한 고정밀 측정 및 품질 관리 기술을 보유하고 있습니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="정밀측정기술 (Precision Measurement)" subtitle="레이저트래커 기반의 3차원 정밀측정 기술 보유" imageSrc="/src/assets/images/technology/precision-measurement/hero.png" imageAlt="Precision Measurement Technology" />
+  <SideNav />
+
+  <Content
+    title="정밀측정 장비"
+    items={[
+      {
+        title: '3D 측정',
+        description: '3차원 좌표 측정기를 이용한 정밀 측정',
+      },
+      {
+        title: '레이저 간섭계',
+        description: '레이저 간섭계를 이용한 나노미터급 측정',
+      },
+      {
+        title: '절연 시험',
+        description: '전기적 절연 성능 시험 및 평가',
+      },
+      {
+        title: '품질 관리',
+        description: '통계적 품질 관리 시스템 구축',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero-image.png',
+      alt: 'Measurement Equipment',
+    }}
+  />
+
+  <!-- 핵심 기술 소개 -->
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+    <h2 class="text-2xl font-bold mb-2">레이저트래커 기반의 3차원 정밀측정 기술 보유</h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">"레이저 트래커를 활용해 진공 챔버 내·외부 구성품의 위치를 외부에서 비접촉 방식으로 측정"</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <img src="/src/assets/images/default.png" alt="3D Laser Tracker를 이용한 측정" class="w-full h-56 object-cover" />
+        <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">3D Laser Tracker를 이용한 측정</figcaption>
+      </figure>
+      <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <img src="/src/assets/images/default.png" alt="비접촉 방식의 정밀 타겟팅" class="w-full h-56 object-cover" />
+        <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">비접촉 방식의 정밀 타겟팅</figcaption>
+      </figure>
+      <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <img src="/src/assets/images/default.png" alt="실시간 데이터 분석 및 형상 구현" class="w-full h-56 object-cover" />
+        <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">실시간 데이터 분석 및 형상 구현</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <Features3
+    title="측정 정밀도"
+    subtitle="나노미터급 정밀 측정 능력"
+    columns={3}
+    items={[
+      {
+        title: '±1μm',
+        description: '3차원 측정기 정밀도',
+        icon: 'tabler:ruler',
+      },
+      {
+        title: '±10nm',
+        description: '레이저 간섭계 정밀도',
+        icon: 'tabler:radar',
+      },
+      {
+        title: 'ISO 9001',
+        description: '품질경영시스템 인증',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+</Layout>

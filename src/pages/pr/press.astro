@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+
+const metadata = {
+  title: '보도자료 | 하늘엔지니어링',
+  description: '하늘엔지니어링의 언론 보도 자료와 미디어 소식을 확인하실 수 있습니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero3 title="보도자료 (Press Release)" subtitle="언론 속 하늘엔지니어링" imageSrc="/src/assets/images/pr/press/hero.png" imageAlt="Press" />
+  <SideNav />
+
+  <section class="mx-auto max-w-6xl px-6 py-16 md:py-20 space-y-6">
+    <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+      <div class="flex items-center gap-3 mb-2">
+        <img src="/src/assets/images/logo.jpeg" alt="언론사" class="h-6 w-6 rounded" />
+        <h3 class="text-lg font-semibold">KFE와 ITER 부품(진공용기 씰링플랜지) 공급계약</h3>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">공급계약 관련 기사 링크</p>
+      <a href="https://n.news.naver.com/article/092/0002344319?sid=105" target="_blank" rel="noreferrer" class="text-sm text-blue-700 dark:text-blue-400 underline">기사 보기</a>
+    </article>
+
+    <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+      <div class="flex items-center gap-3 mb-2">
+        <img src="/src/assets/images/logo.jpeg" alt="언론사" class="h-6 w-6 rounded" />
+        <h3 class="text-lg font-semibold">국내 핵융합 컨소시엄, 이탈리아 DTT 수주 "도전장"</h3>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">DTT 수주 관련 기사 링크</p>
+      <a href="https://zdnet.co.kr/view/?no=20240722174657" target="_blank" rel="noreferrer" class="text-sm text-blue-700 dark:text-blue-400 underline">기사 보기</a>
+    </article>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">더 많은 소식을 준비 중입니다.</p>
+  </section>
+</Layout>
