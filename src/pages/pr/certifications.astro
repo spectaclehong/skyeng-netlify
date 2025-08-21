@@ -31,7 +31,7 @@ const metadata = {
       ].map((name) => (
         <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900">
           <div class="aspect-[4/3] w-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-            <Image src="~/assets/images/default.png" alt={name} layout="contained" class="object-contain h-full" />
+            <Image src="~/assets/images/default.png" alt={name} layout="responsive" aspectRatio="4/3" class="object-contain" />
           </div>
           <div class="p-3 border-t border-gray-200 dark:border-gray-800">
             <p class="text-sm font-medium">{name}</p>

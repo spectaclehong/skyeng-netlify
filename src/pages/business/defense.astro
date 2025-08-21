@@ -29,7 +29,7 @@ const metadata = {
     <div class="grid md:grid-cols-3 gap-4">
       {Array.from({ length: 6 }).map((_, i) => (
         <div class="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
-          <Image src="~/assets/images/default.png" alt={`한화 디퓨저 사진 ${i+1}`} layout="fullWidth" class="w-full h-44 object-cover" />
+          <Image src="~/assets/images/default.png" alt={`한화 디퓨저 사진 ${i+1}`} layout="responsive" aspectRatio="16/9" class="object-cover" />
         </div>
       ))}
     </div>
