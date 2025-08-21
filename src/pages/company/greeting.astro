@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '인사말 | 하늘엔지니어링',
@@ -10,7 +11,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="인사말" subtitle="저희 하늘엔지니어링을 방문해 주셔서 감사합니다." imageSrc="/src/assets/images/company/greeting/hero.png" imageAlt="Greeting" />
+  <Hero3 title="인사말" subtitle="저희 하늘엔지니어링을 방문해 주셔서 감사합니다." imageSrc="~/assets/images/company/greeting/hero.png" imageAlt="Greeting" />
   <SideNav />
 
   <section class="mx-auto max-w-6xl px-6 py-12 md:py-16">
@@ -18,7 +19,7 @@ const metadata = {
       <!-- Left: Portrait / Group Image -->
       <div class="md:col-span-1">
         <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 shadow">
-          <img src="/src/assets/images/default.png" alt="하늘엔지니어링 임직원" class="h-full w-full object-cover" />
+          <Image src="~/assets/images/default.png" alt="하늘엔지니어링 임직원" layout="fullWidth" class="h-full w-full object-cover" />
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '보도자료 | 하늘엔지니어링',
@@ -11,13 +12,13 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="보도자료 (Press Release)" subtitle="언론 속 하늘엔지니어링" imageSrc="/src/assets/images/pr/press/hero.png" imageAlt="Press" />
+  <Hero3 title="보도자료 (Press Release)" subtitle="언론 속 하늘엔지니어링" imageSrc="~/assets/images/pr/press/hero.png" imageAlt="Press" />
   <SideNav />
 
   <section class="mx-auto max-w-6xl px-6 py-16 md:py-20 space-y-6">
     <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
       <div class="flex items-center gap-3 mb-2">
-        <img src="/src/assets/images/logo.jpeg" alt="언론사" class="h-6 w-6 rounded" />
+        <Image src="~/assets/images/logo.jpeg" alt="언론사" layout="fixed" width={24} height={24} class="h-6 w-6 rounded" />
         <h3 class="text-lg font-semibold">KFE와 ITER 부품(진공용기 씰링플랜지) 공급계약</h3>
       </div>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">공급계약 관련 기사 링크</p>
@@ -26,7 +27,7 @@ const metadata = {
 
     <article class="rounded-xl border border-gray-200 dark:border-gray-800 p-4">
       <div class="flex items-center gap-3 mb-2">
-        <img src="/src/assets/images/logo.jpeg" alt="언론사" class="h-6 w-6 rounded" />
+        <Image src="~/assets/images/logo.jpeg" alt="언론사" layout="fixed" width={24} height={24} class="h-6 w-6 rounded" />
         <h3 class="text-lg font-semibold">국내 핵융합 컨소시엄, 이탈리아 DTT 수주 "도전장"</h3>
       </div>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">DTT 수주 관련 기사 링크</p>

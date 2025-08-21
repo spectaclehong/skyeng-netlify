@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '핵융합사업 | 하늘엔지니어링',
@@ -11,7 +12,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="핵융합 사업" subtitle="KSTAR · ITER · DTT 프로젝트 수행" imageSrc="/src/assets/images/business/fusion/hero.png" imageAlt="핵융합 사업" />
+  <Hero3 title="핵융합 사업" subtitle="KSTAR · ITER · DTT 프로젝트 수행" imageSrc="~/assets/images/business/fusion/hero.png" imageAlt="핵융합 사업" />
   <SideNav items={[
     { href: '/business/fusion', label: '핵융합 사업' },
     { href: '/business/accelerator', label: '가속기 사업' },
@@ -30,7 +31,7 @@ const metadata = {
         <p class="text-sm text-gray-700 dark:text-gray-300">Detailed Design for Vacuum Vessel & Other Structures</p>
       </div>
       <div>
-        <img src="/src/assets/images/default.png" alt="3D 모델링" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="3D 모델링" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
     </div>
     <div class="mt-10">

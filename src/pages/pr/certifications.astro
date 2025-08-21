@@ -4,6 +4,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '인증자료 | 하늘엔지니어링',
@@ -12,7 +13,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="인증자료 (Certifications)" subtitle="공식 인증서 및 자격 현황" imageSrc="/src/assets/images/pr/certifications/hero.png" imageAlt="Certifications" />
+  <Hero3 title="인증자료 (Certifications)" subtitle="공식 인증서 및 자격 현황" imageSrc="~/assets/images/pr/certifications/hero.png" imageAlt="Certifications" />
   <SideNav />
 
   <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
@@ -30,7 +31,7 @@ const metadata = {
       ].map((name) => (
         <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900">
           <div class="aspect-[4/3] w-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-            <img src="/src/assets/images/default.png" alt={name} class="object-contain h-full" />
+            <Image src="~/assets/images/default.png" alt={name} layout="contained" class="object-contain h-full" />
           </div>
           <div class="p-3 border-t border-gray-200 dark:border-gray-800">
             <p class="text-sm font-medium">{name}</p>

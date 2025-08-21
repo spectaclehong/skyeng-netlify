@@ -4,6 +4,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Content from '~/components/widgets/Content.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '반도체 관련사업 | 하늘엔지니어링',
@@ -12,7 +13,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="반도체 관련사업 (Semiconductor)" subtitle="TMAH Roll Brush Cleaner · Dip Process · AVG/OHT · EFEM · Wet Station" imageSrc="/src/assets/images/business/semiconductor/hero.png" imageAlt="Semiconductor Projects" />
+  <Hero3 title="반도체 관련사업 (Semiconductor)" subtitle="TMAH Roll Brush Cleaner · Dip Process · AVG/OHT · EFEM · Wet Station" imageSrc="~/assets/images/business/semiconductor/hero.png" imageAlt="Semiconductor Projects" />
   <SideNav items={[
     { href: '/business/fusion', label: '핵융합 사업' },
     { href: '/business/accelerator', label: '가속기 사업' },
@@ -26,37 +27,37 @@ const metadata = {
     <h2 class="text-2xl font-bold mb-6">프로젝트 포트폴리오</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="TMAH Roll Brush Cleaner" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="TMAH Roll Brush Cleaner" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">1. TMAH Roll Brush Cleaner (설계/전장/제어/조립)</h3>
         </div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="Dip Process Develop" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="Dip Process Develop" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">2. Dip Process Develop (설계/전장/제어/조립)</h3>
         </div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="AVG 반송 System" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="AVG 반송 System" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">3. AVG 반송 System (설계/전장/제어/조립)</h3>
         </div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="OHT & Rail" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="OHT & Rail" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">4. OHT & Rail (설계/제작/티칭)</h3>
         </div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="반도체 EFEM" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="반도체 EFEM" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">5. 반도체 EFEM (제작/전장/조립)</h3>
         </div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <img src="/src/assets/images/default.png" alt="Wet Station" class="w-full h-44 object-cover" />
+        <Image src="~/assets/images/default.png" alt="Wet Station" layout="fullWidth" class="w-full h-44 object-cover" />
         <div class="p-4">
           <h3 class="text-sm font-semibold">6. Wet Station (제작/전장/조립)</h3>
         </div>

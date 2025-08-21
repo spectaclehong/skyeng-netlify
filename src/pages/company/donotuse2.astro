@@ -1,0 +1,83 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Company Location',
+};
+---
+<Layout metadata={metadata}>
+<Content
+isAfterContent
+items={[
+  {
+    title: '주소',
+    description: '대전광역시 유성구 테크로4로 17, D동 410호',
+    icon: 'tabler:wifi-off',
+  },
+  {
+    title: 'Tel',
+    description:
+      '042-931-8145',
+    icon: 'tabler:file-download',
+  },
+  {
+    title: 'Fax',
+    description: 
+      '042-931-8149',
+    icon: 'tabler:refresh',
+  },
+  {
+    title: 'e-mail',
+    description: 
+      `skyeng@skyeng.co.kr`,
+    icon: 'tabler:heart',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  alt: 'Vintage Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">본사</h3>
+</Fragment>
+</Content>
+<Content
+isAfterContent
+items={[
+  {
+    title: '주소',
+    description: '전북특별자치도 군산시 가도로 81',
+    icon: 'tabler:wifi-off',
+  },
+  {
+    title: 'Tel',
+    description:
+      '063-463-1009',
+    icon: 'tabler:file-download',
+  },
+  {
+    title: 'Fax',
+    description: 
+      '063-463-1011',
+    icon: 'tabler:refresh',
+  },
+  {
+    title: 'e-mail',
+    description: 
+      `skyeng@skyeng.co.kr`,
+    icon: 'tabler:heart',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  alt: 'Vintage Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">군산 지사</h3>
+</Fragment>
+</Content>
+
+</Layout>

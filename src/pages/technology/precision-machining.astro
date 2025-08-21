@@ -5,6 +5,7 @@ import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '정밀가공기술 | 하늘엔지니어링',
@@ -13,7 +14,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="정밀가공기술 (Precision Machining)" subtitle="CNC 머시닝센터, 5축 가공기 등을 활용한 고정밀 가공" imageSrc="/src/assets/images/technology/precision-machining/hero.png" imageAlt="Precision Machining Technology" />
+  <Hero3 title="정밀가공기술 (Precision Machining)" subtitle="CNC 머시닝센터, 5축 가공기 등을 활용한 고정밀 가공" imageSrc="~/assets/images/technology/precision-machining/hero.png" imageAlt="Precision Machining Technology" />
   <SideNav />
 
   <!-- 1. UHV/크라이오제닉 정밀 가공 (Precision CNC Machining) -->
@@ -26,7 +27,7 @@ const metadata = {
         </blockquote>
       </div>
       <div>
-        <img src="/src/assets/images/default.png" alt="정밀 가공된 Glidcop 부품" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="정밀 가공된 Glidcop 부품" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
     </div>
   </section>
@@ -41,7 +42,7 @@ const metadata = {
         </blockquote>
       </div>
       <div>
-        <img src="/src/assets/images/default.png" alt="클린 가공 환경" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="클린 가공 환경" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
     </div>
   </section>
@@ -56,7 +57,7 @@ const metadata = {
         </blockquote>
       </div>
       <div>
-        <img src="/src/assets/images/default.png" alt="HELICOFLEX DELTA 금속 실링" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="HELICOFLEX DELTA 금속 실링" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
     </div>
   </section>

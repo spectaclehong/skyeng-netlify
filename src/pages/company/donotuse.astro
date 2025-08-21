@@ -1,0 +1,132 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero3 from '~/components/widgets/Hero3.astro';
+import SideNav from '~/components/widgets/SideNav.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: '인사말 | 하늘엔지니어링',
+  description: '초고진공(Ultra High Vacuum) 및 극저온(Cryogenic) 기술을 기반으로 한 장치개발 및 제작 전문기업 하늘엔지니어링입니다.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero3 title="인사말" subtitle="안녕하십니까. 저희 하늘엔지니어링을 방문해 주셔서 감사합니다." imageSrc="~/assets/images/company/message/hero.png" imageAlt="CEO Message" />
+  <SideNav />
+
+  <!-- Company Introduction -->
+  <Content
+    id="company-intro"
+    tagline="ABOUT US"
+    title="회사 소개"
+    subtitle="초고진공·극저온 기술 전문 기업"
+    content={`<p>㈜하늘엔지니어링은 <strong>초고진공(Ultra High Vacuum) 및 극저온(Cryogenic) 기술</strong>을 기반으로 한 장치개발 및 제작에 전념해 온 전문 기업입니다.</p>
+    
+    <p>오랜 연구와 제작 경험을 바탕으로 산업, 연구 등 다양한 분야에 최적화된 고품질 설비를 공급하고 있으며, 끊임없는 기술혁신과 고객 중심의 맞춤형 솔루션을 통해 최고의 파트너가 되기 위해 노력하고 있습니다.</p>`}
+    image={{
+      src: '~/assets/images/front-view.png',
+      alt: '하늘엔지니어링 현장 전경',
+    }}
+  />
+
+  <!-- Philosophy & Core Values -->
+  <Content
+    tagline="PHILOSOPHY"
+    title="우리의 철학"
+    subtitle="완벽에 가까운 품질과 철저한 사후관리"
+    content={`<p>초고진공 및 극저온 분야는 <strong>미세한 기술이 큰 차이를 만들어내는</strong> 만큼, ㈜하늘엔지니어링은 완벽에 가까운 품질과 철저한 사후관리로 고객 여러분의 신뢰에 보답하겠습니다.</p>
+    
+    <p>앞으로도 고객 여러분의 든든한 동반자로서 <strong>지속 가능한 성장</strong>을 이뤄 나가겠습니다.</p>`}
+    isReversed
+    image={{
+      src: '~/assets/images/side-view.png',
+      alt: '하늘엔지니어링 기술력',
+    }}
+  />
+
+  <!-- Core Values -->
+  <Features
+    tagline="CORE VALUES"
+    title="핵심 가치"
+    subtitle="17년간 축적된 기술력과 경험으로 더 큰 미래를 열어가겠습니다"
+    items={[
+      {
+        title: '전문성',
+        description: 'KSTAR, ITER, RISP, KSLV-II 등 국가 대형 프로젝트 수행 경험',
+        icon: 'tabler:award',
+      },
+      {
+        title: '완성도',
+        description: '설계–제작–조립–시험–설치 전 과정 책임 수행',
+        icon: 'tabler:circle-check',
+      },
+      {
+        title: '혁신',
+        description: '지속적인 기술 개발과 품질 향상을 통한 고객 만족',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: '신뢰',
+        description: '고객과의 약속을 지키며 함께 성장하는 파트너',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Key Statistics -->
+  <Stats
+    tagline="ACHIEVEMENTS"
+    title="주요 실적"
+    subtitle="국가 대형 프로젝트 수행 경험"
+    stats={[
+      { amount: '17+', title: '사업 경력 연수', icon: 'tabler:calendar' },
+      { amount: '4', title: '주요 국가 프로젝트', icon: 'tabler:rocket' },
+      { amount: '10⁻¹⁰', title: 'Torr급 초고진공', icon: 'tabler:atom' },
+      { amount: '4K', title: '극저온 시스템', icon: 'tabler:temperature-minus' },
+    ]}
+  />
+
+  <!-- Key Technologies -->
+  <Features
+    tagline="TECHNOLOGIES"
+    title="보유 기술"
+    subtitle="첨단 기술력으로 고객의 요구에 부응합니다"
+    items={[
+      {
+        title: '극저온기술',
+        description: '4K급 시스템, 250W Helium Liquefier',
+        icon: 'tabler:snowflake',
+      },
+      {
+        title: '고진공기술',
+        description: '10⁻¹⁰ Torr급 초고진공 시스템',
+        icon: 'tabler:vacuum-cleaner',
+      },
+      {
+        title: '특수용접',
+        description: 'TIG, MIG, E-Beam 용접',
+        icon: 'tabler:flame',
+      },
+      {
+        title: '정밀가공',
+        description: '대형 부품 마이크론급 가공',
+        icon: 'tabler:tool',
+      },
+      {
+        title: '정밀측정',
+        description: '3차원 측정, 헬륨 누설 시험',
+        icon: 'tabler:ruler-measure',
+      },
+      {
+        title: '품질관리',
+        description: 'ASME, ISO 9001 국제 표준 준수',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+
+</Layout>

@@ -5,6 +5,7 @@ import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '정밀측정기술 | 하늘엔지니어링',
@@ -13,7 +14,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="정밀측정기술 (Precision Measurement)" subtitle="레이저트래커 기반의 3차원 정밀측정 기술 보유" imageSrc="/src/assets/images/technology/precision-measurement/hero.png" imageAlt="Precision Measurement Technology" />
+  <Hero3 title="정밀측정기술 (Precision Measurement)" subtitle="레이저트래커 기반의 3차원 정밀측정 기술 보유" imageSrc="~/assets/images/technology/precision-measurement/hero.png" imageAlt="Precision Measurement Technology" />
   <SideNav />
 
   <Content
@@ -49,15 +50,15 @@ const metadata = {
 
     <div class="grid md:grid-cols-3 gap-6">
       <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-        <img src="/src/assets/images/default.png" alt="3D Laser Tracker를 이용한 측정" class="w-full h-56 object-cover" />
+        <Image src="~/assets/images/default.png" alt="3D Laser Tracker를 이용한 측정" layout="fullWidth" class="w-full h-56 object-cover" />
         <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">3D Laser Tracker를 이용한 측정</figcaption>
       </figure>
       <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-        <img src="/src/assets/images/default.png" alt="비접촉 방식의 정밀 타겟팅" class="w-full h-56 object-cover" />
+        <Image src="~/assets/images/default.png" alt="비접촉 방식의 정밀 타겟팅" layout="fullWidth" class="w-full h-56 object-cover" />
         <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">비접촉 방식의 정밀 타겟팅</figcaption>
       </figure>
       <figure class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-        <img src="/src/assets/images/default.png" alt="실시간 데이터 분석 및 형상 구현" class="w-full h-56 object-cover" />
+        <Image src="~/assets/images/default.png" alt="실시간 데이터 분석 및 형상 구현" layout="fullWidth" class="w-full h-56 object-cover" />
         <figcaption class="p-3 text-sm text-gray-700 dark:text-gray-300">실시간 데이터 분석 및 형상 구현</figcaption>
       </figure>
     </div>

@@ -5,6 +5,7 @@ import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Content from '~/components/widgets/Content.astro';
 import GoogleMap from '~/components/widgets/GoogleMap.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '사업장소개 | 하늘엔지니어링',
@@ -13,7 +14,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="사업장소개" subtitle="총 19,650㎡의 대규모 제조시설과 최첨단 장비 보유" imageSrc="/src/assets/images/company/locations/hero.png" imageAlt="Company Facilities" />
+  <Hero3 title="사업장소개" subtitle="총 19,650㎡의 대규모 제조시설과 최첨단 장비 보유" imageSrc="~/assets/images/company/locations/hero.png" imageAlt="Company Facilities" />
   <SideNav />
 
   <!-- Tabs: HQ | Gunsan Branch (CSS-only) -->
@@ -31,7 +32,7 @@ const metadata = {
         <!-- HQ Content -->
         <div class="panel-hq space-y-8 mt-8">
           <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-            <img src="/src/assets/images/hero-image.png" alt="본사 전경" class="w-full h-64 md:h-96 object-cover" />
+            <Image src="~/assets/images/hero-image.png" alt="본사 전경" layout="fullWidth" class="w-full h-64 md:h-96 object-cover" />
           </div>
           <div class="grid md:grid-cols-2 gap-8">
             <div>
@@ -51,7 +52,7 @@ const metadata = {
         <!-- Gunsan Content -->
         <div class="panel-gunsan space-y-8 mt-8">
           <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-            <img src="/src/assets/images/default.png" alt="군산지사" class="w-full h-64 md:h-96 object-cover" />
+            <Image src="~/assets/images/default.png" alt="군산지사" layout="fullWidth" class="w-full h-64 md:h-96 object-cover" />
           </div>
           <div class="grid md:grid-cols-2 gap-8">
             <div>

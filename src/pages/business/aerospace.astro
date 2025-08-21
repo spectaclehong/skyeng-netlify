@@ -4,6 +4,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import Content from '~/components/widgets/Content.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: '우주항공사업 | 하늘엔지니어링',
@@ -12,7 +13,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero3 title="우주항공 사업" subtitle="KSLV-II · TLV 상세설계 및 3D 모델링" imageSrc="/src/assets/images/business/aerospace/hero.png" imageAlt="Aerospace Projects" />
+  <Hero3 title="우주항공 사업" subtitle="KSLV-II · TLV 상세설계 및 3D 모델링" imageSrc="~/assets/images/business/aerospace/hero.png" imageAlt="Aerospace Projects" />
   <SideNav items={[
     { href: '/business/fusion', label: '핵융합 사업' },
     { href: '/business/accelerator', label: '가속기 사업' },
@@ -28,11 +29,11 @@ const metadata = {
     <div class="grid md:grid-cols-2 gap-8 items-start">
       <div>
         <h3 class="text-lg font-semibold mb-2">TLV</h3>
-        <img src="/src/assets/images/default.png" alt="TLV 3D 모델" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="TLV 3D 모델" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
       <div>
         <h3 class="text-lg font-semibold mb-2">KSLV-II</h3>
-        <img src="/src/assets/images/default.png" alt="KSLV-II 3D 모델" class="rounded-lg border border-gray-200 dark:border-gray-800" />
+        <Image src="~/assets/images/default.png" alt="KSLV-II 3D 모델" layout="fullWidth" class="rounded-lg border border-gray-200 dark:border-gray-800" />
       </div>
     </div>
   </section>
@@ -41,7 +42,7 @@ const metadata = {
   <section class="mx-auto max-w-6xl px-6 pb-24">
     <h2 class="text-2xl font-bold mb-4">2) Manufacturing of Vacuum Chamber for Korea Satellite Locket Test</h2>
     <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-      <img src="/src/assets/images/default.png" alt="위성 로켓 테스트용 진공챔버" class="w-full h-72 md:h-[28rem] object-cover" />
+      <Image src="~/assets/images/default.png" alt="위성 로켓 테스트용 진공챔버" layout="fullWidth" class="w-full h-72 md:h-[28rem] object-cover" />
     </div>
   </section>
 </Layout>
