@@ -1,14 +1,67 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import SideNav from '~/components/widgets/SideNav.astro';
 import Image from '~/components/common/Image.astro';
+import { findImage } from '~/utils/images';
 
 const metadata = {
   title: '핵융합사업 | 하늘엔지니어링',
   description: 'KSTAR, ITER, DTT 등 국제 핵융합 프로젝트 참여 경험과 극저온 시스템 설계·제작 전문성을 보유하고 있습니다.',
 };
+
+
+// Read image metadata to populate sizes
+const enrichWithMeta = async <T extends { src: string }>(items: Array<T>) => {
+  return await Promise.all(
+    items.map(async (item) => {
+      const meta = await findImage(item.src);
+      const width = typeof meta !== 'string' && meta?.width ? Number(meta.width) : undefined;
+      const height = typeof meta !== 'string' && meta?.height ? Number(meta.height) : undefined;
+      return { ...(item as T), width, height } as T & {
+        width?: number;
+        height?: number;
+      };
+    })
+  );
+};
+
+// Only use the six specified images (Design + 5 Manufacturing summaries)
+const kstarOverview = [
+  {
+    src: '~/assets/images/business/fusion/kstar/1. Design.png',
+    title: 'Design',
+  },
+  {
+    src: '~/assets/images/business/fusion/kstar/2. Manufacturing : Liquid Helium Transfer Line(DB#2).png',
+    title: 'Manufacturing : Liquid Helium Transfer Line(DB#2)',
+  },
+  {
+    src: '~/assets/images/business/fusion/kstar/3. Manufacturing : Liquid Helium Distribution Box(DB#2).png',
+    title: 'Manufacturing : Liquid Helium Distribution Box(DB#2)',
+  },
+  {
+    src: '~/assets/images/business/fusion/kstar/4. Manufacturing : Internal Process Piping(DB#2).png',
+    title: 'Manufacturing : Internal Process Piping(DB#2)',
+  },
+  {
+    src: '~/assets/images/business/fusion/kstar/5. Manufacturing : Liquid Helium Distribution System Upgrade(DBU).png',
+    title: 'Manufacturing : Liquid Helium Distribution System Upgrade(DBU)',
+  },
+  {
+    src: '~/assets/images/business/fusion/kstar/6. Manufacturing : Super Conducting Current Lead System.png',
+    title: 'Manufacturing : Super Conducting Current Lead System',
+  },
+];
+
+const kstarOverviewMeta = await enrichWithMeta(kstarOverview);
+
+// Two large hero images to display above 1. Design.png
+const kstarDesignHeros = [
+  { src: '~/assets/images/business/fusion/kstar/1. Design - hero1.png', title: 'Design – Hero 1' },
+  { src: '~/assets/images/business/fusion/kstar/1. Design - hero2.png', title: 'Design – Hero 2' },
+];
+const kstarDesignHerosMeta = await enrichWithMeta(kstarDesignHeros);
 ---
 
 <Layout metadata={metadata}>
@@ -24,35 +77,40 @@ const metadata = {
 
   <!-- 1) KSTAR Participation -->
   <section class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-    <h2 class="text-2xl font-bold mb-6">1. KSTAR (Korea Superconducting Advanced Research) 참여 사업</h2>
-    <div class="grid md:grid-cols-2 gap-8 items-start">
-      <div>
-        <h3 class="text-lg font-semibold mb-2">Design</h3>
-        <p class="text-sm text-gray-700 dark:text-gray-300">Detailed Design for Vacuum Vessel & Other Structures</p>
-      </div>
-      <div>
-        <Image src="~/assets/images/default.png" alt="3D 모델링" layout="responsive" aspectRatio="16/9" class="rounded-lg border border-gray-200 dark:border-gray-800 object-cover" />
-      </div>
+    <h2 class="text-2xl font-bold mb-6">1. KSTAR (Korea Superconducting Tokamak Advanced Research)</h2>
+
+    <!-- Design hero images row -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      {kstarDesignHerosMeta.map((hero) => (
+        <figure class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-white">
+          <Image
+            src={hero.src}
+            alt={hero.title}
+            layout="constrained"
+            width={hero.width}
+            height={hero.height}
+            class="w-full h-auto object-cover"
+          />
+        </figure>
+      ))}
     </div>
-    <div class="mt-10">
-      <h3 class="text-lg font-semibold mb-3">Manufacturing</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        {[
-          'Helium Transfer Line(DB#2) 제작',
-          'Liquid Helium Distribution Box(DB#2) 제작',
-          'Internal Piping (DB#2) 설계 및 제작',
-          'Liquid Helium Distribution Box Upgrade(DBU) 제작',
-          '250W 냉동기 제작',
-          '초전도 전류 인입 시스템 제작',
-          '진공용기 내 제어코일(IVCC) 설계 및 제작',
-          'Precise Experiment Diagnostic Equipment / Large Scale Vacuum Bellows / Manufacturing other Vacuum-related Component',
-        ].map((txt) => (
-          <div class="rounded-lg border border-gray-200 dark:border-gray-800 p-4">
-            <p class="text-sm">{txt}</p>
-            <div class="mt-3 aspect-video bg-gray-100 dark:bg-gray-800 rounded"></div>
-          </div>
-        ))}
-      </div>
+
+    <div class="space-y-10">
+      {kstarOverviewMeta.map((item) => (
+        <div>
+          <h3 class="text-lg font-semibold mb-3">{item.title}</h3>
+          <figure class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-white">
+            <Image 
+              src={item.src} 
+              alt={item.title} 
+              layout="constrained" 
+              width={item.width} 
+              height={item.height} 
+              class="w-full h-auto object-cover" 
+            />
+          </figure>
+        </div>
+      ))}
     </div>
   </section>
 
